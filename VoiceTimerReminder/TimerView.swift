@@ -36,6 +36,7 @@ struct TimerView: View {
                         timeSecondFormatter(timeInSeconds: timerItem.timeLengthInSeconds),
                         systemImage: "hourglass.tophalf.fill"
                     )
+                    .labelStyle(.trailingIcon)
                 }
             }
         }

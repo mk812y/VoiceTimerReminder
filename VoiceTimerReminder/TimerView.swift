@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct TimerView: View {
+    let timerItem: TimerModel
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("\(timerItem.title)")
                 .font(.headline)
             ProgressView(value: 0.9)
                 .progressViewStyle(TimerProgressViewStyle())
@@ -30,6 +32,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(timerItem: TimerModel.testData[0])
     }
 }

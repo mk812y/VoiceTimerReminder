@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    let timerItems: [TimerModel]
+    
     var body: some View {
         List {
-            TimerView()
-            TimerView()
-            TimerView()
-            TimerView()
+            ForEach(timerItems) { timerItem in
+                TimerView(timerItem: timerItem)
+            }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(timerItems: TimerModel.testData)
     }
 }

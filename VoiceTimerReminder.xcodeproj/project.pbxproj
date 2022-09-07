@@ -10,6 +10,7 @@
 		A557BBEB28C8A85800177002 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBEA28C8A85800177002 /* TimerView.swift */; };
 		A557BBEE28C8B02100177002 /* TimerProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBED28C8B02100177002 /* TimerProgressViewStyle.swift */; };
 		A557BBF028C8DF5400177002 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBEF28C8DF5400177002 /* TrailingIconLabelStyle.swift */; };
+		A58F0C0E28C8EA1200DD061A /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F0C0D28C8EA1200DD061A /* TimerModel.swift */; };
 		A5E0D41228C7CF2F00026124 /* VoiceTimerReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0D41128C7CF2F00026124 /* VoiceTimerReminderApp.swift */; };
 		A5E0D41428C7CF2F00026124 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0D41328C7CF2F00026124 /* ContentView.swift */; };
 		A5E0D41628C7CF3000026124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E0D41528C7CF3000026124 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		A557BBEA28C8A85800177002 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		A557BBED28C8B02100177002 /* TimerProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProgressViewStyle.swift; sourceTree = "<group>"; };
 		A557BBEF28C8DF5400177002 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
+		A58F0C0D28C8EA1200DD061A /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		A5E0D40E28C7CF2F00026124 /* VoiceTimerReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceTimerReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E0D41128C7CF2F00026124 /* VoiceTimerReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTimerReminderApp.swift; sourceTree = "<group>"; };
 		A5E0D41328C7CF2F00026124 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A58F0C0C28C8E9F300DD061A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A58F0C0D28C8EA1200DD061A /* TimerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A5E0D40528C7CF2F00026124 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 				A5E0D41128C7CF2F00026124 /* VoiceTimerReminderApp.swift */,
 				A5E0D41328C7CF2F00026124 /* ContentView.swift */,
 				A557BBEA28C8A85800177002 /* TimerView.swift */,
+				A58F0C0C28C8E9F300DD061A /* Models */,
 				A557BBEC28C8AFDA00177002 /* Helpers */,
 				A5E0D41528C7CF3000026124 /* Assets.xcassets */,
 				A5E0D41728C7CF3000026124 /* Preview Content */,
@@ -157,6 +168,7 @@
 				A557BBEB28C8A85800177002 /* TimerView.swift in Sources */,
 				A5E0D41428C7CF2F00026124 /* ContentView.swift in Sources */,
 				A5E0D41228C7CF2F00026124 /* VoiceTimerReminderApp.swift in Sources */,
+				A58F0C0E28C8EA1200DD061A /* TimerModel.swift in Sources */,
 				A557BBEE28C8B02100177002 /* TimerProgressViewStyle.swift in Sources */,
 				A557BBF028C8DF5400177002 /* TrailingIconLabelStyle.swift in Sources */,
 			);

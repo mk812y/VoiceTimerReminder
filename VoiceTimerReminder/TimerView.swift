@@ -10,6 +10,13 @@ import SwiftUI
 struct TimerView: View {
     let timerItem: TimerModel
     
+    private func timeSecondFormatter(timeInSeconds: Int) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .abbreviated
+        formatter.zeroFormattingBehavior = [.dropLeading, .dropTrailing]
+        return formatter.string(from: TimeInterval(timeInSeconds)) ?? ""
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(timerItem.title)")
@@ -18,12 +25,17 @@ struct TimerView: View {
                 .progressViewStyle(TimerProgressViewStyle())
             HStack {
                 VStack(alignment: .leading) {
-                    Label("02:29", systemImage: "hourglass.bottomhalf.fill")
+                    Label(
+                        timeSecondFormatter(timeInSeconds: timerItem.timeElapsedinSeconds),
+                        systemImage: "hourglass.bottomhalf.fill"
+                    )
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Label("04:31", systemImage: "hourglass.tophalf.fill")
-                        .labelStyle(.trailingIcon)
+                    Label(
+                        timeSecondFormatter(timeInSeconds: timerItem.timeLengthInSeconds),
+                        systemImage: "hourglass.tophalf.fill"
+                    )
                 }
             }
         }
@@ -32,6 +44,7 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
+        TimerView(timerItem: TimerModel.testData[4])
         TimerView(timerItem: TimerModel.testData[0])
     }
 }

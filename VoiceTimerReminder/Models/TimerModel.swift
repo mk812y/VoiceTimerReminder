@@ -24,7 +24,7 @@ struct TimerModel: Identifiable {
 extension TimerModel {
     static let testData: [TimerModel] =
     [
-        TimerModel(title: "Гладить котеек", timeLengthInSeconds: 3600, timeElapsedinSeconds: 3569),
+        TimerModel(title: "Гладить котеек", timeLengthInSeconds: 3600, timeElapsedinSeconds: 209221),
         TimerModel(title: "lerning SwiftUI", timeLengthInSeconds: 72000, timeElapsedinSeconds: 0),
         TimerModel(title: "кушоть", timeLengthInSeconds: 73451, timeElapsedinSeconds: 430),
         TimerModel(title: "Гладить котеек два", timeLengthInSeconds: 23421, timeElapsedinSeconds: 23421),

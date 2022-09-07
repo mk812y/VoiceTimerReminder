@@ -13,7 +13,8 @@ struct TimerView: View {
     private func timeSecondFormatter(timeInSeconds: Int) -> String {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .abbreviated
-        formatter.zeroFormattingBehavior = [.dropLeading, .dropTrailing]
+        formatter.zeroFormattingBehavior = .pad
+        formatter.allowedUnits = timeInSeconds >= 86400 ? [.day, .hour, .minute, .second] : [.hour, .minute, .second]
         return formatter.string(from: TimeInterval(timeInSeconds)) ?? ""
     }
     

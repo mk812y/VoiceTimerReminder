@@ -1,5 +1,5 @@
 //
-//  TimerRowView.swift
+//  TimerRow.swift
 //  VoiceTimerReminder
 //
 //  Created by Михаил Куприянов on 07.09.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimerRowView: View {
+struct TimerRow: View {
     let timerItem: TimerModel
     
     private func timeSecondFormatter(timeInSeconds: Int) -> String {
@@ -41,8 +41,8 @@ struct TimerRowView: View {
     }
 }
 
-struct TimerRowView_Previews: PreviewProvider {
+struct TimerRow_Previews: PreviewProvider {
     static var previews: some View {
-        TimerRowView(timerItem: TimerModel.testData[0])
+        TimerRow(timerItem: TimerModel.testData[0])
     }
 }

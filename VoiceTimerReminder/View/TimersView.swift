@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TimersView: View {
     @Binding var timerItems: [TimerModel]
-//    @State private var newTimerData = TimerModel.Data()
+    @State private var newTimerData = TimerModel.Data()
     
     var body: some View {
         List {
             ForEach(timerItems) { timerItem in
-                NavigationLink(destination: TimerDetailView()) {
-                    TimerRowView(timerItem: timerItem)
+                NavigationLink(destination: TimerDetail()) {
+                    TimerRow(timerItem: timerItem)
                 }
             }
         }

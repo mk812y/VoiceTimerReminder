@@ -16,6 +16,7 @@ struct TimersView: View {
             ForEach(timerItems) { timerItem in
                 NavigationLink(destination: TimerDetail()) {
                     TimerRow(timerItem: timerItem)
+//                    TimerDetailEdit(data: TimerModel.Data)
                 }
             }
         }

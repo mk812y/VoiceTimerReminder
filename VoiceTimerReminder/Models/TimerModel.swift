@@ -26,7 +26,11 @@ extension TimerModel {
     struct Data {
         var title: String = ""
         var timeElapsedInSeconds: Int = 0
-        var timeLenghtInSeconds: Int = 3600
+        var timeLenghtInSeconds: Double = 3600
+    }
+    
+    var data: Data {
+        Data(title: title, timeElapsedInSeconds: timeElapsedInSeconds, timeLenghtInSeconds: Double(timeLengthInSeconds))
     }
     
     static let testData: [TimerModel] =

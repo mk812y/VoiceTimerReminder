@@ -10,24 +10,31 @@ import Foundation
 struct TimerModel: Identifiable {
     let id: UUID
     var title: String
+    var timeElapsedInSeconds: Int
     var timeLengthInSeconds: Int
-    var timeElapsedinSeconds: Int
     
-    init(id: UUID = UUID(), title: String, timeLengthInSeconds: Int, timeElapsedinSeconds: Int) {
+    init(id: UUID = UUID(), title: String, timeElapsedinSeconds: Int, timeLengthInSeconds: Int) {
         self.id = id
         self.title = title
+        self.timeElapsedInSeconds = timeElapsedinSeconds
         self.timeLengthInSeconds = timeLengthInSeconds
-        self.timeElapsedinSeconds = timeElapsedinSeconds
     }
 }
 
 extension TimerModel {
+    
+    struct Data {
+        var title: String = ""
+        var timeElapsedInSeconds: Int = 0
+        var timeLenghtInSeconds: Int = 3600
+    }
+    
     static let testData: [TimerModel] =
     [
-        TimerModel(title: "Гладить котеек", timeLengthInSeconds: 3600, timeElapsedinSeconds: 209221),
-        TimerModel(title: "lerning SwiftUI", timeLengthInSeconds: 72000, timeElapsedinSeconds: 0),
-        TimerModel(title: "кушоть", timeLengthInSeconds: 73451, timeElapsedinSeconds: 430),
-        TimerModel(title: "Гладить котеек два", timeLengthInSeconds: 23421, timeElapsedinSeconds: 23421),
-        TimerModel(title: "Смотреть на котеек", timeLengthInSeconds: 209221, timeElapsedinSeconds: 30)
+        TimerModel(title: "Гладить котеек", timeElapsedinSeconds: 209221, timeLengthInSeconds: 3600),
+        TimerModel(title: "lerning SwiftUI", timeElapsedinSeconds: 0, timeLengthInSeconds: 72000),
+        TimerModel(title: "кушоть", timeElapsedinSeconds: 430, timeLengthInSeconds: 73451),
+        TimerModel(title: "Гладить котеек два", timeElapsedinSeconds: 23421, timeLengthInSeconds: 23421),
+        TimerModel(title: "Смотреть на котеек", timeElapsedinSeconds: 30, timeLengthInSeconds: 209221)
     ]
 }

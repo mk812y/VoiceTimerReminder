@@ -11,7 +11,7 @@ import SwiftUI
 struct VoiceTimerReminderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(timerItems: TimerModel.testData)
+            TimersView(timerItems: .constant(TimerModel.testData))
         }
     }
 }

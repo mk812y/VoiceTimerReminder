@@ -7,24 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A557BBEB28C8A85800177002 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBEA28C8A85800177002 /* TimerView.swift */; };
+		A557BBEB28C8A85800177002 /* TimerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBEA28C8A85800177002 /* TimerRowView.swift */; };
 		A557BBEE28C8B02100177002 /* TimerProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBED28C8B02100177002 /* TimerProgressViewStyle.swift */; };
 		A557BBF028C8DF5400177002 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557BBEF28C8DF5400177002 /* TrailingIconLabelStyle.swift */; };
 		A58F0C0E28C8EA1200DD061A /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F0C0D28C8EA1200DD061A /* TimerModel.swift */; };
+		A59C329F28CA097A005F79B6 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C329E28CA097A005F79B6 /* TimerDetailView.swift */; };
 		A5E0D41228C7CF2F00026124 /* VoiceTimerReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0D41128C7CF2F00026124 /* VoiceTimerReminderApp.swift */; };
-		A5E0D41428C7CF2F00026124 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0D41328C7CF2F00026124 /* ContentView.swift */; };
+		A5E0D41428C7CF2F00026124 /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0D41328C7CF2F00026124 /* TimersView.swift */; };
 		A5E0D41628C7CF3000026124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E0D41528C7CF3000026124 /* Assets.xcassets */; };
 		A5E0D41928C7CF3000026124 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E0D41828C7CF3000026124 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A557BBEA28C8A85800177002 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		A557BBEA28C8A85800177002 /* TimerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRowView.swift; sourceTree = "<group>"; };
 		A557BBED28C8B02100177002 /* TimerProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProgressViewStyle.swift; sourceTree = "<group>"; };
 		A557BBEF28C8DF5400177002 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		A58F0C0D28C8EA1200DD061A /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		A59C329E28CA097A005F79B6 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		A5E0D40E28C7CF2F00026124 /* VoiceTimerReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceTimerReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E0D41128C7CF2F00026124 /* VoiceTimerReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTimerReminderApp.swift; sourceTree = "<group>"; };
-		A5E0D41328C7CF2F00026124 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A5E0D41328C7CF2F00026124 /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
 		A5E0D41528C7CF3000026124 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E0D41828C7CF3000026124 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				A5E0D41128C7CF2F00026124 /* VoiceTimerReminderApp.swift */,
-				A5E0D41328C7CF2F00026124 /* ContentView.swift */,
-				A557BBEA28C8A85800177002 /* TimerView.swift */,
+				A5E0D41328C7CF2F00026124 /* TimersView.swift */,
+				A557BBEA28C8A85800177002 /* TimerRowView.swift */,
+				A59C329E28CA097A005F79B6 /* TimerDetailView.swift */,
 				A58F0C0C28C8E9F300DD061A /* Models */,
 				A557BBEC28C8AFDA00177002 /* Helpers */,
 				A5E0D41528C7CF3000026124 /* Assets.xcassets */,
@@ -165,11 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A557BBEB28C8A85800177002 /* TimerView.swift in Sources */,
-				A5E0D41428C7CF2F00026124 /* ContentView.swift in Sources */,
+				A557BBEB28C8A85800177002 /* TimerRowView.swift in Sources */,
+				A5E0D41428C7CF2F00026124 /* TimersView.swift in Sources */,
 				A5E0D41228C7CF2F00026124 /* VoiceTimerReminderApp.swift in Sources */,
 				A58F0C0E28C8EA1200DD061A /* TimerModel.swift in Sources */,
 				A557BBEE28C8B02100177002 /* TimerProgressViewStyle.swift in Sources */,
+				A59C329F28CA097A005F79B6 /* TimerDetailView.swift in Sources */,
 				A557BBF028C8DF5400177002 /* TrailingIconLabelStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

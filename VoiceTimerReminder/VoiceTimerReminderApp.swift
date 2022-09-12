@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct VoiceTimerReminderApp: App {
+    
+    
     var body: some Scene {
         WindowGroup {
-            TimersView(timerItems: .constant(TimerModel.testData))
+            NavigationView {
+                TimersView(timerItems: .constant(TimerModel.testData))
+            }
         }
     }
 }

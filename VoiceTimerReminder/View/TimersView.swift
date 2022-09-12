@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TimersView: View {
     @Binding var timerItems: [TimerModel]
-    @State private var newTimerData = TimerModel.Data()
+//    @State private var newTimerData = TimerModel.Data()
     
     var body: some View {
         List {

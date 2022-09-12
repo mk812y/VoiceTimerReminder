@@ -25,16 +25,16 @@ struct TimerDetailEdit: View {
                         Text("leght")
                     }
                     Text("\(Int(data.timeLenghtInSeconds) / 60) minutes")
-                    Picker("", selection: $hours) {
-                        ForEach(0..<24, id: \.self) { h in
-                            Text("\(h)").tag(h)
-                        }
-                    }
-                    Picker("", selection: $minutes) {
-                        ForEach(0..<61, id: \.self) { m in
-                            Text("\(m)").tag(m)
-                        }
-                    }
+//                    Picker("", selection: $hours) {
+//                        ForEach(0..<24, id: \.self) { h in
+//                            Text("\(h)").tag(h)
+//                        }
+//                    }
+//                    Picker("", selection: $minutes) {
+//                        ForEach(0..<61, id: \.self) { m in
+//                            Text("\(m)").tag(m)
+//                        }
+//                    }
                 }
                 .padding()
             }

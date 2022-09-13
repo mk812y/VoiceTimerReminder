@@ -15,26 +15,44 @@ struct TimerAddNew: View {
     @State private var selectedMinutes = 30
     
     var body: some View {
-        NavigationView {
-            HStack {
-                Picker("", selection: $selectedHours) {
-                    ForEach(hours, id: \.self) { hour in
-                        Text("\(hour)")
+        VStack {
+            Section(header: Text("dsf")) {
+                HStack {
+                    HStack {
+                        Picker("sd", selection: $selectedHours) {
+                            ForEach(hours, id: \.self) { hour in
+                                Text("\(hour)")
+                                    .font(.title)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .frame(width: 40, height: 90)
+                        .clipped()
+                        Text("hours")
+                            .font(.title2)
                     }
-                }
-                .pickerStyle(.wheel)
-                .frame(width: 100, height: 100)
-                .clipped()
-                Spacer()
-                Picker("", selection: $selectedMinutes) {
-                    ForEach(minutes, id: \.self) { minute in
-                        Text("\(minute)")
+                    .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 50))
+                    HStack {
+                        Picker("", selection: $selectedMinutes) {
+                            ForEach(minutes, id: \.self) { minute in
+                                Text("\(minute)")
+                                    .font(.title)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .frame(width: 40, height: 90)
+                        .clipped()
+                        Text("min")
+                            .font(.title2)
                     }
+                    .padding()
                 }
-                .pickerStyle(.wheel)
-                .frame(width: 100, height: 100)
-                .clipped()
             }
+            Section {
+                TextField("sdf", text: $name)
+            }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

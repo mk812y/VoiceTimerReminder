@@ -19,6 +19,19 @@ class TimerStore: ObservableObject {
             .appendingPathComponent("timers.data")
     }
     
+        static func load() async throws -> [TimerModel] {
+            try await withCheckedThrowingContinuation { continuation in
+                load { result in
+                    switch result {
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    case .success(let timers):
+                        continuation.resume(returning: timers)
+                    }
+                }
+            }
+        }
+    
     static func load(completion: @escaping (Result<[TimerModel], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
@@ -41,6 +54,20 @@ class TimerStore: ObservableObject {
         }
     }
     
+    @discardableResult
+    static func save(timers: [TimerModel]) async throws -> Int {
+        try await withCheckedThrowingContinuation { continuation in
+            save(timers: timers) { result in
+                switch result {
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                case .success(let timersSaved):
+                    continuation.resume(returning: timersSaved)
+                }
+            }
+        }
+    }
+    
     static func save(timers: [TimerModel], completion: @escaping (Result<Int, Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
@@ -57,16 +84,4 @@ class TimerStore: ObservableObject {
             }
         }
     }
-//    static func load() async throws -> [TimerModel] {
-//        try await withCheckedThrowingContinuation { continuation in
-//            load { result in
-//                switch result {
-//                case .failure(let error):
-//                    continuation.resume(throwing: error)
-//                case .success(let timers):
-//                    continuation.resume(returning: timers)
-//                }
-//            }
-//        }
-//    }
  }

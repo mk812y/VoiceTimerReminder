@@ -26,7 +26,7 @@ struct TimersView: View {
 //                Image(systemName: "plus")
 //            }
 //        }
-        TimerAddNew()
+        TimerAddNew(data: $newTimerData)
     }
 }
 

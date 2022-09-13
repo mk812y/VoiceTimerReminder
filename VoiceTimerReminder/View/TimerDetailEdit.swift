@@ -12,15 +12,29 @@ struct TimerDetailEdit: View {
 //    @State var hours: Int = 0
 //    @State var minutes: Int = 0
     
+    
+    
     private var convertValue: Int {
-        return Int(data.timeLenghtInSeconds) / 60
+        return data.timeLenghtInSeconds / 60
     }
+    
+    private var valueInHours: Int {
+        return (data.timeLenghtInSeconds / 60) / 60
+    }
+    
+    private var valueInHours2: Int {
+        return (data.timeLenghtInSeconds / 60) % 60
+    }
+    
+//    private func convertTime
     
     var body: some View {
         Form {
             Section(header: Text("Timer")) {
                 TextField("Name", text: $data.title)
-                
+                Text("\(data.timeLenghtInSeconds) -> \(convertValue)")
+                Text("\(valueInHours) hr : \(valueInHours2) min")
+                Text("")
             }
         }
     }
@@ -28,6 +42,10 @@ struct TimerDetailEdit: View {
 
 struct TimerDetailEdit_Previews: PreviewProvider {
     static var previews: some View {
-        TimerDetailEdit(data: .constant(TimerModel.testData[0].data))
+        VStack {
+            TimerDetailEdit(data: .constant(TimerModel.testData[0].data))
+            TimerDetailEdit(data: .constant(TimerModel.testData[1].data))
+            TimerDetailEdit(data: .constant(TimerModel.testData[2].data))
+        }
     }
 }

@@ -24,18 +24,18 @@ struct TimerModel: Identifiable {
 extension TimerModel {
     
     struct Data {
-        var title: String = ""
+        var title: String = "Timer1"
         var timeElapsedInSeconds: Int = 0
-        var timeLenghtInSeconds: Double = 3600
+        var timeLenghtInSeconds: Int = 5400
     }
     
     var data: Data {
-        Data(title: title, timeElapsedInSeconds: timeElapsedInSeconds, timeLenghtInSeconds: Double(timeLengthInSeconds))
+        Data(title: title, timeElapsedInSeconds: timeElapsedInSeconds, timeLenghtInSeconds: timeLengthInSeconds)
     }
     
     static let testData: [TimerModel] =
     [
-        TimerModel(title: "Гладить котеек", timeElapsedinSeconds: 209221, timeLengthInSeconds: 3600),
+        TimerModel(title: "Гладить котеек", timeElapsedinSeconds: 209221, timeLengthInSeconds: 5400),
         TimerModel(title: "lerning SwiftUI", timeElapsedinSeconds: 0, timeLengthInSeconds: 72000),
         TimerModel(title: "кушоть", timeElapsedinSeconds: 430, timeLengthInSeconds: 73451),
         TimerModel(title: "Гладить котеек два", timeElapsedinSeconds: 23421, timeLengthInSeconds: 23421),

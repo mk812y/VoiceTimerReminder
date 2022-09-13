@@ -26,15 +26,12 @@ struct TimerDetailEdit: View {
         return (data.timeLenghtInSeconds / 60) % 60
     }
     
-//    private func convertTime
-    
     var body: some View {
         Form {
             Section(header: Text("Timer")) {
                 TextField("Name", text: $data.title)
                 Text("\(data.timeLenghtInSeconds) -> \(convertValue)")
                 Text("\(valueInHours) hr : \(valueInHours2) min")
-                Text("")
             }
         }
     }

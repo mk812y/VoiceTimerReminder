@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TimerModel: Identifiable {
+struct TimerModel: Identifiable, Codable {
     let id: UUID
     var title: String
     var timeElapsedInSeconds: Int

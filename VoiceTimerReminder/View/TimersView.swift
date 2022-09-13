@@ -50,9 +50,9 @@ struct TimersView: View {
                     }
             }
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
-        }
+//        .onChange(of: scenePhase) { phase in
+//            if phase == .inactive { saveAction() }
+//        }
     }
 }
 

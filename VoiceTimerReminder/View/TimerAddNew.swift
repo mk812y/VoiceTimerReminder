@@ -25,7 +25,7 @@ struct TimerAddNew: View {
             Section(header: Text("Timer time")) {
                 HStack {
                     HStack {
-                        Picker("sd", selection: $selectedHours) {
+                        Picker("set hours", selection: $selectedHours) {
                             ForEach(hours, id: \.self) { hour in
                                 Text("\(hour)")
                                     .font(.title)
@@ -39,7 +39,7 @@ struct TimerAddNew: View {
                     }
                     .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 50))
                     HStack {
-                        Picker("", selection: $selectedMinutes) {
+                        Picker("set minutes", selection: $selectedMinutes) {
                             ForEach(minutes, id: \.self) { minute in
                                 Text("\(minute)")
                                     .font(.title)

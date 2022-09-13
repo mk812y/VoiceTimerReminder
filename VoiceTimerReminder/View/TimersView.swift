@@ -12,20 +12,21 @@ struct TimersView: View {
     @State private var newTimerData = TimerModel.Data()
     
     var body: some View {
-        List {
-            ForEach(timerItems) { timerItem in
-                NavigationLink(destination: TimerDetail()) {
-                    TimerRow(timerItem: timerItem)
-//                    TimerDetailEdit(data: TimerModel.Data)
-                }
-            }
-        }
-        .navigationTitle("Timers")
-        .toolbar {
-            Button(action: {}) {
-                Image(systemName: "plus")
-            }
-        }
+//        List {
+//            ForEach(timerItems) { timerItem in
+//                NavigationLink(destination: TimerDetail()) {
+//                    TimerRow(timerItem: timerItem)
+////                    TimerDetailEdit(data: TimerModel.Data)
+//                }
+//            }
+//        }
+//        .navigationTitle("Timers")
+//        .toolbar {
+//            Button(action: {}) {
+//                Image(systemName: "plus")
+//            }
+//        }
+        TimerAddNew()
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//буду переделывать на Core Data
 
 struct TimersView: View {
     @Environment(\.scenePhase) private var scenePhase

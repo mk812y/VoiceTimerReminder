@@ -13,7 +13,7 @@ struct TimersView: View {
     @Binding var timerItems: [TimerModel]
     @State private var newTimerData = TimerModel.Data()
     @State private var isShowTimerAddNew = false
-    let saveAction: ()->Void
+//    let saveAction: ()->Void
     
     var body: some View {
         List {
@@ -51,17 +51,17 @@ struct TimersView: View {
                     }
             }
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
-        }
+//        .onChange(of: scenePhase) { phase in
+//            if phase == .inactive { saveAction() }
+//        }
     }
 }
 
 struct TimersView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TimersView(timerItems: .constant(TimerModel.testData), saveAction: {})
-//            TimersView(timerItems: .constant(TimerModel.testData))
+//            TimersView(timerItems: .constant(TimerModel.testData), saveAction: {})
+            TimersView(timerItems: .constant(TimerModel.testData))
         }
         
     }

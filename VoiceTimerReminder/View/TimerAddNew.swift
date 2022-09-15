@@ -10,8 +10,6 @@ import SwiftUI
 struct TimerAddNew: View {
     @Binding var data: TimerModel.Data
     
-    //    @State private var newTimerData = TimerModel.Data()
-    
     @State private var hours = [Int](0...23)
     @State private var selectedHours = 1
     @State private var minutes = [Int](0...59)

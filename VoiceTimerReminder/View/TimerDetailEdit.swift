@@ -12,6 +12,8 @@ struct TimerDetailEdit: View {
 //    @State var hours: Int = 0
 //    @State var minutes: Int = 0
     
+    var testTime = "28:30"
+    
     
     
     private var convertValue: Int {

@@ -10,38 +10,59 @@ import SwiftUI
 struct TimerRow: View {
     let timerItem: TimerModel
     
-    private func timeSecondFormatter(timeInSeconds: Int) -> String {
-        let formatter = DateComponentsFormatter()
-        return formatter.string(from: TimeInterval(timeInSeconds)) ?? ""
-    }
+//    private func timeSecondFormatter(timeInSeconds: Int) -> String {
+//        let formatter = DateComponentsFormatter()
+//        return formatter.string(from: TimeInterval(timeInSeconds)) ?? ""
+//    }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(timerItem.title)")
-                .font(.headline)
-            ProgressView(value: 0.9)
-                .progressViewStyle(TimerProgressViewStyle())
-            HStack {
-                VStack(alignment: .leading) {
-                    Label(
-                        timeSecondFormatter(timeInSeconds: timerItem.timeElapsedInSeconds),
-                        systemImage: "hourglass.bottomhalf.fill"
-                    )
+//            Text("\(timerItem.title)")
+//                .font(.headline)
+//            ProgressView(value: 0.9)
+//                .progressViewStyle(TimerProgressViewStyle())
+//            HStack {
+//                VStack(alignment: .leading) {
+//                    Label(
+//                        timeSecondFormatter(timeInSeconds: timerItem.timeElapsedInSeconds),
+//                        systemImage: "hourglass.bottomhalf.fill"
+//                    )
+//                }
+//                Spacer()
+//                VStack(alignment: .trailing) {
+//                    Label(
+//                        timeSecondFormatter(timeInSeconds: timerItem.timeLengthInSeconds),
+//                        systemImage: "hourglass.tophalf.fill"
+//                    )
+//                }
+//            }
+            let futureDate: Date = Calendar.current.date(byAdding: .second, value: timerItem.timeLengthInSeconds, to: Date()) ?? Date()
+            
+            VStack {
+                Text("\(timerItem.title)")
+                    .padding(.bottom, 10)
+                HStack {
+                    Text("sdf")
+                    Spacer()
+                    Button(action: {}) {
+                        Text("start")
+                    }
+                    Spacer()
+                    Text("sdf")
                 }
-                Spacer()
-                VStack(alignment: .trailing) {
-                    Label(
-                        timeSecondFormatter(timeInSeconds: timerItem.timeLengthInSeconds),
-                        systemImage: "hourglass.tophalf.fill"
-                    )
-                }
+                Text("\(futureDate)")
+                Text("\(timerItem.timeLengthInSeconds)")
+                
+            
             }
+            .padding()
+            .font(.title)
         }
     }
 }
 
 struct TimerRow_Previews: PreviewProvider {
     static var previews: some View {
-        TimerRow(timerItem: TimerModel.testData[0])
+        TimerRow(timerItem: TimerModel.testData[1])
     }
 }

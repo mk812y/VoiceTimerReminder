@@ -17,7 +17,7 @@ struct TimerDetail: View {
     
     func timerUp() {
         
-        if counter < duration && isStart {
+        if counter < duration || isStart {
             counter += 1
             
             print(counter)
@@ -37,7 +37,8 @@ struct TimerDetail: View {
         VStack {
             Text(timeString)
             Button(action: {
-                isStart.toggle()
+                isStart = true
+                
             }) {
                 Label("Boobs", systemImage: "plus")
             }

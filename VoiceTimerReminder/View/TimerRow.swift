@@ -34,8 +34,13 @@ struct TimerRow: View {
             Text("\(timerItem.title)")
                 .font(.headline)
             ZStack {
-                ProgressView(value: 0.5)
-                    .progressViewStyle(CircularProgressViewStyle(size: 60))
+                CircularProgressView(width: 80, lineWidth: 5, progress: 0.6, foregroundColor: Color(.systemGreen))
+                    
+                Button(action: { isRunning.toggle() }) {
+                    CircularButtonView(
+                        style: isRunning ? .stop : .start,
+                        width: 60)
+                }
             }
                 
             HStack {

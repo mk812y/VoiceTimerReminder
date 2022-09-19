@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CircularButtonView: View {
     
+    var style: ButtonStyle
+    var width: CGFloat
+    
     enum ButtonStyle {
         case start
         case stop
@@ -42,8 +45,7 @@ struct CircularButtonView: View {
         }
 
     }
-    var style: ButtonStyle
-    var width: CGFloat
+    
     
     var body: some View {
         Circle()

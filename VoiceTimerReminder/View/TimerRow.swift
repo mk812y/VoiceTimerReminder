@@ -10,15 +10,23 @@ import SwiftUI
 struct TimerRow: View {
     let timerItem: TimerModel
     let timer = Timer.publish(every: 1.0, tolerance: 0.1, on: .main, in: .common).autoconnect()
-    @State var isStart: Bool = false
     
-    @State var upCount: Int = 0
+    @State var isRunning: Bool = false
     
-    func updateTime(time: Int, countUP: Bool) -> String {
+    @State var count: Int = 0
+    
+    func timerUpdate() {
+        if isRunning { count += 1 }
+    }
+    
+    func timeFormatterToString(timeFromModel: Int, timePlusCount: Bool) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.zeroFormattingBehavior = .pad
-        return formatter.string(from: TimeInterval( countUP ? time + upCount : time - upCount)) ?? "00:00:00"
+        return formatter.string(
+            from: TimeInterval(
+                timePlusCount ? timeFromModel + count : timeFromModel - count
+            )) ?? "00:00:00"
     }
     
     var body: some View {
@@ -28,29 +36,19 @@ struct TimerRow: View {
             ProgressView(value: 0.9)
                 .progressViewStyle(TimerProgressViewStyle())
             HStack {
-                VStack(alignment: .leading) {
-                    Label(
-                        updateTime(time: timerItem.timeElapsedInSeconds, countUP: true),
-                        systemImage: "hourglass.bottomhalf.fill"
-                    )
-                }
+                Text(timeFormatterToString(timeFromModel: timerItem.timeElapsedInSeconds, timePlusCount: true))
                 Spacer()
-                VStack(alignment: .trailing) {
-                    Label(
-                        updateTime(time: timerItem.timeLengthInSeconds, countUP: false),
-                        systemImage: "hourglass.tophalf.fill"
-                    )
-                }
+                Text(timeFormatterToString(timeFromModel: timerItem.timeLengthInSeconds, timePlusCount: false))
             }
             Button(action: {
-                isStart.toggle()
+                isRunning.toggle()
             }) {
-                Text(isStart ? "stop": "start")
+                Text(isRunning ? "stop": "start")
             }
             .font(.title)
         }
         .onReceive(timer) { _ in
-            if isStart { upCount += 1 }
+            timerUpdate()
         }
     }
 }
@@ -58,5 +56,7 @@ struct TimerRow: View {
 struct TimerRow_Previews: PreviewProvider {
     static var previews: some View {
         TimerRow(timerItem: TimerModel.testData[1])
+            .padding()
+            .background(Color(.systemGray6))
     }
 }

@@ -22,7 +22,7 @@ struct CircularProgressView: View {
 
 public struct CircularProgressViewStyle: ProgressViewStyle {
     var size: CGFloat
-    private let lineWidth: CGFloat = 20
+    private let lineWidth: CGFloat = 5
     private let defaultProgress = 0.0
     private let gradient = LinearGradient(colors: [.purple, .blue], startPoint: .leading, endPoint: .trailing)
     

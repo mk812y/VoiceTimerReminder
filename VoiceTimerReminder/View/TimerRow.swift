@@ -33,8 +33,10 @@ struct TimerRow: View {
         VStack(alignment: .leading) {
             Text("\(timerItem.title)")
                 .font(.headline)
-            ProgressView(value: 0.5)
-                .progressViewStyle(CircularProgressViewStyle(size: 60))
+            ZStack {
+                ProgressView(value: 0.5)
+                    .progressViewStyle(CircularProgressViewStyle(size: 60))
+            }
                 
             HStack {
                 Text(timeFormatterToString(timeFromModel: timerItem.elapsedTimer, timePlusCount: true))

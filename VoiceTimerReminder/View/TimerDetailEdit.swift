@@ -17,22 +17,22 @@ struct TimerDetailEdit: View {
     
     
     private var convertValue: Int {
-        return data.timeLenghtInSeconds / 60
+        return data.goalTimer / 60
     }
     
     private var valueInHours: Int {
-        return (data.timeLenghtInSeconds / 60) / 60
+        return (data.goalTimer / 60) / 60
     }
     
     private var valueInHours2: Int {
-        return (data.timeLenghtInSeconds / 60) % 60
+        return (data.goalTimer / 60) % 60
     }
     
     var body: some View {
         Form {
             Section(header: Text("Timer")) {
                 TextField("Name", text: $data.title)
-                Text("\(data.timeLenghtInSeconds) -> \(convertValue)")
+                Text("\(data.goalTimer) -> \(convertValue)")
                 Text("\(valueInHours) hr : \(valueInHours2) min")
             }
         }

@@ -10,14 +10,14 @@ import Foundation
 struct TimerModel: Identifiable, Codable {
     let id: UUID
     var title: String
-    var timeElapsedInSeconds: Int
-    var timeLengthInSeconds: Int
+    var elapsedTimer: Int
+    var goalTimer: Int
     
-    init(id: UUID = UUID(), title: String, timeElapsedinSeconds: Int, timeLengthInSeconds: Int) {
+    init(id: UUID = UUID(), title: String, elapsedTimer: Int, goalTimer: Int) {
         self.id = id
         self.title = title
-        self.timeElapsedInSeconds = timeElapsedinSeconds
-        self.timeLengthInSeconds = timeLengthInSeconds
+        self.elapsedTimer = elapsedTimer
+        self.goalTimer = goalTimer
     }
 }
 
@@ -25,27 +25,27 @@ extension TimerModel {
     
     struct Data {
         var title: String = "Timer1"
-        var timeElapsedInSeconds: Int = 0
-        var timeLenghtInSeconds: Int = 5400
+        var elapsedTimer: Int = 0
+        var goalTimer: Int = 5400
     }
     
     var data: Data {
-        Data(title: title, timeElapsedInSeconds: timeElapsedInSeconds, timeLenghtInSeconds: timeLengthInSeconds)
+        Data(title: title, elapsedTimer: elapsedTimer, goalTimer: goalTimer)
     }
     
     init(data: Data) {
         id = UUID()
         title = data.title
-        timeElapsedInSeconds = data.timeElapsedInSeconds
-        timeLengthInSeconds = data.timeLenghtInSeconds
+        elapsedTimer = data.elapsedTimer
+        goalTimer = data.goalTimer
     }
     
     static let testData: [TimerModel] =
     [
-        TimerModel(title: "Гладить котеек", timeElapsedinSeconds: 209221, timeLengthInSeconds: 5400),
-        TimerModel(title: "lerning SwiftUI", timeElapsedinSeconds: 0, timeLengthInSeconds: 7200),
-        TimerModel(title: "кушоть", timeElapsedinSeconds: 430, timeLengthInSeconds: 73451)//,
-//        TimerModel(title: "Гладить котеек два", timeElapsedinSeconds: 23421, timeLengthInSeconds: 23421),
+        TimerModel(title: "Гладить котеек", elapsedTimer: 209221, goalTimer: 5400),
+        TimerModel(title: "lerning SwiftUI", elapsedTimer: 0, goalTimer: 7200),
+        TimerModel(title: "кушоть", elapsedTimer: 430, goalTimer: 73451)//,
+//        TimerModel(title: "Гладить котеек два", timeElapsedinSeconds: 23421, goalTimer: 23421),
 //        TimerModel(title: "Смотреть на котеек", timeElapsedinSeconds: 30, timeLengthInSeconds: 209221)
     ]
 }

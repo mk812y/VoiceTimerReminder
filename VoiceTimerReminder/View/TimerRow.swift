@@ -36,9 +36,9 @@ struct TimerRow: View {
             ProgressView(value: 0.9)
                 .progressViewStyle(TimerProgressViewStyle())
             HStack {
-                Text(timeFormatterToString(timeFromModel: timerItem.timeElapsedInSeconds, timePlusCount: true))
+                Text(timeFormatterToString(timeFromModel: timerItem.elapsedTimer, timePlusCount: true))
                 Spacer()
-                Text(timeFormatterToString(timeFromModel: timerItem.timeLengthInSeconds, timePlusCount: false))
+                Text(timeFormatterToString(timeFromModel: timerItem.goalTimer, timePlusCount: false))
             }
             Button(action: {
                 isRunning.toggle()

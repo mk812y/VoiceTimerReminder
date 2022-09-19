@@ -33,8 +33,9 @@ struct TimerRow: View {
         VStack(alignment: .leading) {
             Text("\(timerItem.title)")
                 .font(.headline)
-            ProgressView(value: 0.9)
-                .progressViewStyle(TimerProgressViewStyle())
+            ProgressView(value: 0.5)
+                .progressViewStyle(CircularProgressViewStyle(size: 60))
+                
             HStack {
                 Text(timeFormatterToString(timeFromModel: timerItem.elapsedTimer, timePlusCount: true))
                 Spacer()
@@ -47,6 +48,7 @@ struct TimerRow: View {
             }
             .font(.title)
         }
+        .padding()
         .onReceive(timer) { _ in
             timerUpdate()
         }
@@ -56,7 +58,6 @@ struct TimerRow: View {
 struct TimerRow_Previews: PreviewProvider {
     static var previews: some View {
         TimerRow(timerItem: TimerModel.testData[1])
-            .padding()
             .background(Color(.systemGray6))
     }
 }

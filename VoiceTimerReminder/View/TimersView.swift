@@ -16,11 +16,9 @@ struct TimersView: View {
 //    let saveAction: ()->Void
     
     var body: some View {
-        List {
+        ScrollView {
             ForEach(timerItems) { timerItem in
-                NavigationLink(destination: TimerDetail()) {
                     TimerRow(timerItem: timerItem)
-                }
             }
         }
         .navigationTitle("Timers")

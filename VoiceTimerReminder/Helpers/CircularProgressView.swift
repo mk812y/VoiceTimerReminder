@@ -14,14 +14,14 @@ struct CircularProgressView: View {
     var foregroundColor: Color
     
     var body: some View {
-        Circle()
-            .fill(Color.clear)
-            .frame(width: width)
-            .overlay(
-                Circle()
-                    .stroke(Color(.secondarySystemBackground), lineWidth: lineWidth)
-            )
-            .overlay(overlayCircle)
+            Circle()
+                .fill(Color.clear)
+                .frame(width: width)
+                .overlay(
+                    Circle()
+                        .stroke(Color(.secondarySystemBackground), lineWidth: lineWidth)
+                )
+                .overlay(overlayCircle)
     }
     
     private var overlayCircle: some View {
@@ -47,7 +47,7 @@ struct CircularProgressView: View {
 struct CircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
         CircularProgressView(width: 60, lineWidth: 10, progress: 0.8, foregroundColor: Color(.systemGreen))
-            
+        
     }
 }
 

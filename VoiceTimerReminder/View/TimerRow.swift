@@ -29,20 +29,26 @@ struct TimerRow: View {
             )) ?? "00:00:00"
     }
     
+    var progress: CGFloat {
+        CGFloat((((timerItem.elapsedTimer + count) * 100) / timerItem.goalTimer)) / 100
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(timerItem.title)")
                 .font(.headline)
+            HStack {
+                Text("\(CGFloat((((timerItem.elapsedTimer + count) * 100) / timerItem.goalTimer)) / 100)")
+            }
             ZStack {
-                CircularProgressView(width: 80, lineWidth: 5, progress: 0.6, foregroundColor: Color(.systemGreen))
-                    
+                CircularProgressView(width: 70, lineWidth: 10, progress: progress, foregroundColor: Color(.orange))
                 Button(action: { isRunning.toggle() }) {
                     CircularButtonView(
                         style: isRunning ? .stop : .start,
                         width: 60)
                 }
             }
-                
+            
             HStack {
                 Text(timeFormatterToString(timeFromModel: timerItem.elapsedTimer, timePlusCount: true))
                 Spacer()

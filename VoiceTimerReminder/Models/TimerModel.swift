@@ -43,8 +43,8 @@ extension TimerModel {
     static let testData: [TimerModel] =
     [
         TimerModel(title: "Гладить котеек", elapsedTimer: 209221, goalTimer: 5400),
-        TimerModel(title: "lerning SwiftUI", elapsedTimer: 0, goalTimer: 7200),
-        TimerModel(title: "кушоть", elapsedTimer: 430, goalTimer: 73451)//,
+        TimerModel(title: "lerning SwiftUI", elapsedTimer: 120, goalTimer: 240),
+        TimerModel(title: "кушоть", elapsedTimer: 0, goalTimer: 7200)
 //        TimerModel(title: "Гладить котеек два", timeElapsedinSeconds: 23421, goalTimer: 23421),
 //        TimerModel(title: "Смотреть на котеек", timeElapsedinSeconds: 30, timeLengthInSeconds: 209221)
     ]
